@@ -1,0 +1,12 @@
+https://mkyong.com/jsf2/jsf-2-checkboxes-example/
+
+
+clase Serializable
+
+private static final long serialVersionUID = 1L
+
+@Temporal(TemporalType.DATE)
+@Basic(optional = false)
+@GeneratedValue(strategy = GenerationType.IDENTITY) / inv. sobre las estrategias
+
+
