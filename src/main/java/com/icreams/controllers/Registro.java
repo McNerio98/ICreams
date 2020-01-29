@@ -5,8 +5,13 @@
  */
 package com.icreams.controllers;
 
+import com.icreams.controllers.util.jsfUtil;
+import com.icreams.controllers.util.jsfUtil.Accion;
+import com.icreams.entity.Usuario;
+import com.icreams.facade.UsuariosFacade;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
@@ -17,34 +22,44 @@ import javax.inject.Named;
 @Named("registro")
 @SessionScoped
 public class Registro implements Serializable{
-    private String nombre;
-    private String apellido;
+    
+    @EJB
+    private UsuariosFacade ejbUsuario;
+    private Usuario user;
 
-    public String getNombre() {
-        return nombre;
+    
+    private UsuariosFacade getFacade(){
+        return this.ejbUsuario;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
     @PostConstruct
     public void init(){
-        
+        this.user = new Usuario();
     }
 
-    public String getApellido() {
-        return apellido;
+    public Usuario getUser() {
+        return user;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setUser(Usuario user) {
+        this.user = user;
     }
     
-    public void aceptar(){
-        
+
+    public void crear(){
+        this.persistir(Accion.CREATE);
     }
     
     public String cancelar(){
         return "/pages/login.xhtml";
     }
+    
+    private void persistir(Accion action){
+        
+        if(action == Accion.CREATE){
+            getFacade().insertar(user);
+        }
+    }
+    
+
 }

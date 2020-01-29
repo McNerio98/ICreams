@@ -14,17 +14,17 @@
                     <h:form>
                         <div class="form-group">
                             <h:outputLabel value="Datos Generales" class="text-primary"/>
-                            <h:inputText class="form-control" a:placeholder="EXAMPLE"/>
+                            <h:inputText class="form-control" a:placeholder="EXAMPLE" value="${registro.user.nomUser}"/>
                         </div>
                         <h:panelGroup layout="block" class="row">
                             <h:panelGroup layout="block" class="col-md-6">
                                 <div class="form-group">
-                                    <h:inputText class="form-control" a:placeholder="Nombres"/>
+                                    <h:inputText class="form-control" a:placeholder="Nombres" value="#{registro.user.nombre}"/>
                                 </div>                                
                             </h:panelGroup>
                             <h:panelGroup layout="block" class="col-md-6">
                                 <div class="form-group">
-                                    <h:inputText class="form-control" a:placeholder="Apellidos"/>
+                                    <h:inputText class="form-control" a:placeholder="Apellidos" value="#{registro.user.apellido}"/>
                                 </div>                                
                             </h:panelGroup>                            
                         </h:panelGroup>
@@ -32,7 +32,7 @@
                         <h:panelGroup layout="block" class="row">
                             <h:panelGroup layout="block" class="col-md-6">
                                 <div class="form-group">
-                                    <h:inputSecret class="form-control" a:placeholder="Clave"/>
+                                    <h:inputSecret class="form-control" a:placeholder="Clave" value="#{registro.user.clave}"/>
                                 </div>                                
                             </h:panelGroup>
                             <h:panelGroup layout="block" class="col-md-6">
@@ -42,14 +42,14 @@
                             </h:panelGroup>                            
                         </h:panelGroup>
                         <div>
-                            #{registro.nombre}
-                            <h:commandButton action="#{registro.aceptar}" value="Crear" class="btn btn-primary mr-2"/>
+
+                            <h:commandButton action="#{registro.crear}" value="Crear" class="btn btn-primary mr-2"/>
                             <h:commandButton value="Cancelar" class="btn btn-secondary"/>
                         </div>
                     </h:form>
                 </div>
                 <div class="col-md-6">
-                    <h:graphicImage value="/resources/images/ejecutivo.jpg" style="width: 100%; height: auto;"/>
+                    
                 </div>
             </div>
         </div>
