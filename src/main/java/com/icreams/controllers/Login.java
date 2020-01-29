@@ -5,10 +5,16 @@
  */
 package com.icreams.controllers;
 
+import java.io.Serializable;
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
+
 /**
  *
  * @author desarrollo
  */
-public class Login {
+@Named("cLogin")
+@SessionScoped
+public class Login implements Serializable{
     
 }

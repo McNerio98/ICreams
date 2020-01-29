@@ -12,6 +12,8 @@ import javax.persistence.*;
  *
  * @author desarrollo
  */
+@Entity
+@Table(name="sabores")
 public class Sabor implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
