@@ -21,26 +21,18 @@ import javax.persistence.Table;
 @Table(name="usuarios")
 public class Usuario implements Serializable{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idUsuario;
-    @Column(name="nombre")
-    private String nombre;
-    @Column(name="apellido")
-    private String apellido;
     @Column(name="usuario")
     private String nomUser;
+    
+    @Column(name="nombre")
+    private String nombre;
+    
+    @Column(name="apellido")
+    private String apellido;
+
     @Column(name="clave")
     private String clave;
-
     public Usuario() {
-    }
-
-    public Integer getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
     }
 
     public String getNombre() {
