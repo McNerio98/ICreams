@@ -67,18 +67,6 @@ public class Login implements Serializable{
     
     
         
-    @PostConstruct
-    public void init(){
-        
-    }
-    
-    public String validar(){
-        
-        return "home";
-    }
-
-    
-    
 
 
 }
