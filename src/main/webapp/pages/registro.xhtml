@@ -11,7 +11,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 p-3">
-                    <h:form>
+                    <h:form id="formRegistro">
                         <div class="form-group">
                             <h:outputLabel value="Datos Generales" class="text-primary"/>
                             <h:inputText class="form-control" a:placeholder="EXAMPLE" value="#{registro.user.nomUser}"/>
@@ -19,12 +19,14 @@
                         <h:panelGroup layout="block" class="row">
                             <h:panelGroup layout="block" class="col-md-6">
                                 <div class="form-group">
-                                    <h:inputText class="form-control" a:placeholder="Nombres" value="#{registro.user.nombre}"/>
+                                    <h:inputText class="form-control" a:placeholder="Nombres" value="#{registro.user.nombre}" id="inputNom"/>
+                                    <h:messages  globalOnly="true"  class="text-primary"/>
                                 </div>                                
                             </h:panelGroup>
                             <h:panelGroup layout="block" class="col-md-6">
                                 <div class="form-group">
                                     <h:inputText class="form-control" a:placeholder="Apellidos" value="#{registro.user.apellido}"/>
+                                    
                                 </div>                                
                             </h:panelGroup>                            
                         </h:panelGroup>
@@ -33,18 +35,22 @@
                             <h:panelGroup layout="block" class="col-md-6">
                                 <div class="form-group">
                                     <h:inputSecret class="form-control" a:placeholder="Clave" value="#{registro.user.clave}"/>
+                                    
                                 </div>                                
                             </h:panelGroup>
                             <h:panelGroup layout="block" class="col-md-6">
                                 <div class="form-group">
-                                    <h:inputSecret class="form-control" a:placeholder="Repetir Clave"/>
+                                    <h:inputSecret class="form-control" a:placeholder="Repetir Clave" value="#{registro.repeatPass}"/>
                                 </div>                                
                             </h:panelGroup>                            
                         </h:panelGroup>
                         <div>
-
+                            <h:panelGroup layout="block" id="msgSystem">
+                                <h:message for="msgSystem"/>
+                            </h:panelGroup>
+                            
                             <h:commandButton action="#{registro.crear}" value="Crear" class="btn btn-primary mr-2"/>
-                            <h:commandButton value="Cancelar" class="btn btn-secondary"/>
+                            <h:commandButton value="Cancelar" class="btn btn-secondary" action="#{registro.cancelar}"/>
                         </div>
                     </h:form>
                 </div>

@@ -16,16 +16,19 @@
         
         <ui:define name="ctnPrincipal">
             <h:panelGroup layout="block" style="text-align: center; width: 100%;">
-            <h:form class="form-signin">
-                <h:inputText class="form-control" a:placeholder="#{bundle.nomUsuario}"></h:inputText>
-                <h:inputSecret class="form-control" a:placeholder="Clave"/>
+                <h:form class="form-signin" id="formLogin">
+                <h:inputText class="form-control" a:placeholder="#{bundle.nomUsuario}" value="#{login.txtUser}"></h:inputText>
+                <h:inputSecret class="form-control" a:placeholder="#{bundle.inPassword}" value="#{login.txtClave}"/>
                 <h:panelGroup layout="block" class="checkbox mb-3">
                     <h:outputLabel>
                         <h:selectBooleanCheckbox value="Recordarme"/> Recordarme
                     </h:outputLabel>
                 </h:panelGroup>
-                
-                <h:commandButton class="btn btn-lg btn-primary btn-block" action="#{login.validar}" value="Ingresar"/>
+                <h:commandButton class="btn btn-lg btn-primary btn-block" value="Ingresar" action="#{login.validar}"/>
+
+                <h:panelGroup layout="block" id="msgNoti" class="text-danger">
+                    <h:message for="msgNoti" />
+                </h:panelGroup>
                 <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
                 <h:link value="Crear una cuenta" outcome="pageRegistrar"/>
             </h:form>                

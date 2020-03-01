@@ -26,4 +26,12 @@ public abstract class AbstractFacade<T> {
         getEntityManager().persist(entidad);
     }
     
+    public void edit(T entidad){
+        getEntityManager().merge(entidad);
+    }
+    
+    public T find(Object id){
+        return getEntityManager().find(claseEntidad, id);
+    } 
+    
 }

@@ -54,3 +54,7 @@ ALTER TABLE public.detalle_venta ADD CONSTRAINT fk_sorbete FOREIGN KEY (idsorbet
 ALTER TABLE public.detalle_venta ADD CONSTRAINT fk_venta FOREIGN KEY (idventa) REFERENCES ventas(idventa);
 
 
+alter table ventas drop column idVendedor;
+alter table usuarios drop column idusuario;
+alter table usuarios add constraint pk_usuario primary key(usuario);
+
