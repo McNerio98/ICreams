@@ -24,12 +24,12 @@
                         <h:selectBooleanCheckbox value="Recordarme"/> Recordarme
                     </h:outputLabel>
                 </h:panelGroup>
-                <h:commandButton class="btn btn-lg btn-primary btn-block" value="Ingresar"/>
+                
+                <h:commandButton class="btn btn-lg btn-primary btn-block" action="#{login.validar}" value="Ingresar"/>
                 <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
                 <h:link value="Crear una cuenta" outcome="pageRegistrar"/>
             </h:form>                
             </h:panelGroup>
-
             
         </ui:define>
         

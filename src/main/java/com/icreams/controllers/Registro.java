@@ -6,7 +6,7 @@
 package com.icreams.controllers;
 
 import com.icreams.controllers.util.jsfUtil;
-import com.icreams.controllers.util.jsfUtil.Accion;
+import com.icreams.controllers.util.jsfUtil.PersistAction;
 import com.icreams.entity.Usuario;
 import com.icreams.facade.UsuariosFacade;
 import java.io.Serializable;
@@ -47,17 +47,17 @@ public class Registro implements Serializable{
     
 
     public void crear(){
-        this.persistir(Accion.CREATE);
+        this.persistir(PersistAction.CREATE);
     }
     
     public String cancelar(){
         return "/pages/login.xhtml";
     }
     
-    private void persistir(Accion action){
+    private void persistir(PersistAction persisAction){
         
-        if(action == Accion.CREATE){
-            getFacade().insertar(user);
+        if(persisAction == PersistAction.CREATE){
+            getFacade().insertar(this.user);
         }
     }
     

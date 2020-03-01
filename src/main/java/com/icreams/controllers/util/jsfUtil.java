@@ -10,7 +10,7 @@ package com.icreams.controllers.util;
  * @author desarrollo
  */
 public class jsfUtil {
-    public static enum Accion{
+    public static enum PersistAction{
         CREATE,
         DELETE,
         UPDATE

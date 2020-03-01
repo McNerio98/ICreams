@@ -6,6 +6,7 @@
 package com.icreams.controllers;
 
 import java.io.Serializable;
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
@@ -13,8 +14,23 @@ import javax.inject.Named;
  *
  * @author desarrollo
  */
-@Named("cLogin")
+@Named("login")
 @SessionScoped
 public class Login implements Serializable{
     
+        
+    @PostConstruct
+    public void init(){
+        
+    }
+    
+    public String validar(){
+        
+        return "home";
+    }
+
+    
+    
+
+
 }

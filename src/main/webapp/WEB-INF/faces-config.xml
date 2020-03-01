@@ -10,6 +10,13 @@
             <to-view-id>/pages/registro.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>home</from-outcome>
+            <to-view-id>/pages/index.xhtml</to-view-id>
+        </navigation-case>        
+    </navigation-rule>
     <application>
         <resource-bundle>
             <base-name>/Bundle</base-name>
